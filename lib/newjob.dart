@@ -162,7 +162,7 @@ class _CreateNewJobState extends State<CreateNewJob> {
 
   void _choose() async {
     _image =
-        await ImagePicker.pickImage(source: ImageSource.gallery, maxHeight: 400);
+        await ImagePicker.pickImage(source: ImageSource.camera, maxHeight: 400);
     setState(() {});
     //_image = await ImagePicker.pickImage(source: ImageSource.gallery);
   }

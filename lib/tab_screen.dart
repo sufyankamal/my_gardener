@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'job.dart';
 import 'jobdetail.dart';
 import 'dart:convert';
-import 'mainscreen.dart';
 import 'user.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,7 +12,6 @@ import 'package:flutter/services.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 
 import 'SlideRightRoute.dart';
-import 'enterexit.dart';
 
 double perpage = 1;
 

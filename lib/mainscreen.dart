@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'tab_screen.dart';
-import 'tab_screen2.dart';
+
+
 import 'tab_screen3.dart';
 import 'tab_screen4.dart';
 import 'user.dart';
@@ -26,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
     tabs = [
       TabScreen(user: widget.user),
-      TabScreen2(user: widget.user),
+       
       TabScreen3(user: widget.user),
       TabScreen4(user: widget.user),
     ];
@@ -58,10 +60,9 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.search),
             title: Text("Gardener"),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list, ),
-            title: Text("Posted"),
-          ),
+       
+        
+    
           BottomNavigationBarItem(
             icon: Icon(Icons.event, ),
             title: Text("Booked"),

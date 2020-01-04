@@ -67,7 +67,7 @@ class _TabScreen4State extends State<TabScreen4> {
                         Stack(children: <Widget>[
                           Image.asset(
                             "assets/images/background.png",
-                            fit: BoxFit.fitWidth,
+                            fit: BoxFit.fill,
                           ),
                           Column(
                             children: <Widget>[
@@ -94,7 +94,7 @@ class _TabScreen4State extends State<TabScreen4> {
                                             image: new NetworkImage(
                                                 "http://expectojr.com/mygardener/profile/${widget.user.email}.jpg?dummy=${(number)}'")))),
                               ),
-                              SizedBox(height: 5),
+                              SizedBox(height: 50),
                               Container(
                                 child: Text(
                                   widget.user.name?.toUpperCase() ??

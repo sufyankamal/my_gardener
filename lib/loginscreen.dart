@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'forgotaccount.dart';
 import 'mainscreen.dart';
 import 'registrationscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -173,6 +174,8 @@ class _LoginPageState extends State<LoginPage> {
 
   void _onForgot() {
     print('Forgot');
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ForgotPage()));
   }
 
   void _onChange(bool value) {

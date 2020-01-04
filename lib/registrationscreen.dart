@@ -145,7 +145,7 @@ class RegisterWidgetState extends State<RegisterWidget> {
   }
 
   void _choose() async {
-    _image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    _image = await ImagePicker.pickImage(source: ImageSource.camera);
     setState(() {});
 
   }

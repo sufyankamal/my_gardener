@@ -24,7 +24,7 @@ class _TabScreen3State extends State<TabScreen3> {
 
   final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
   Position _currentPosition;
-  String _currentAddress = "Searching current location";
+  String _currentAddress = "Searching current location...";
   List data;
 
   @override
@@ -44,12 +44,12 @@ class _TabScreen3State extends State<TabScreen3> {
             resizeToAvoidBottomPadding: false,
             body: RefreshIndicator(
               key: refreshKey,
-              color: Color.fromRGBO(34,139,34, 1),
+              color: Color.fromRGBO(159, 30, 99, 1),
               onRefresh: () async {
                 await refreshList();
               },
               child: ListView.builder(
-                  //Step 6: Count the data
+                //Step 6: Count the data
                   itemCount: data == null ? 1 : data.length + 1,
                   itemBuilder: (context, index) {
                     if (index == 0) {
@@ -82,23 +82,23 @@ class _TabScreen3State extends State<TabScreen3> {
                                         padding: EdgeInsets.all(5.0),
                                         child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+                                          MainAxisAlignment.spaceEvenly,
                                           children: <Widget>[
                                             Row(
                                               children: <Widget>[
                                                 Icon(Icons.person,
-                                                    ),
+                                                ),
                                                 SizedBox(
                                                   width: 5,
                                                 ),
                                                 Flexible(
                                                   child: Text(
                                                     widget.user.name
-                                                            .toUpperCase() ??
+                                                        .toUpperCase() ??
                                                         "Not registered",
                                                     style: TextStyle(
                                                         fontWeight:
-                                                            FontWeight.bold),
+                                                        FontWeight.bold),
                                                   ),
                                                 ),
                                               ],
@@ -106,7 +106,7 @@ class _TabScreen3State extends State<TabScreen3> {
                                             Row(
                                               children: <Widget>[
                                                 Icon(Icons.location_on,
-                                                    ),
+                                                ),
                                                 SizedBox(
                                                   width: 5,
                                                 ),
@@ -118,7 +118,7 @@ class _TabScreen3State extends State<TabScreen3> {
                                             Row(
                                               children: <Widget>[
                                                 Icon(Icons.rounded_corner,
-                                                    ),
+                                                ),
                                                 SizedBox(
                                                   width: 5,
                                                 ),
@@ -133,7 +133,7 @@ class _TabScreen3State extends State<TabScreen3> {
                                             Row(
                                               children: <Widget>[
                                                 Icon(Icons.credit_card,
-                                                    ),
+                                                ),
                                                 SizedBox(
                                                   width: 5,
                                                 ),
@@ -192,17 +192,17 @@ class _TabScreen3State extends State<TabScreen3> {
                             padding: const EdgeInsets.all(2.0),
                             child: Row(
                               children: <Widget>[
-                                 Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                      border: Border.all(color: Colors.white),
-                                      image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: NetworkImage(
-                                    "http://expectojr.com/mygardener/images/${data[index]['jobimage']}.jpg"
-                                  )))),
+                                Container(
+                                    height: 100,
+                                    width: 100,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(color: Colors.white),
+                                        image: DecorationImage(
+                                            fit: BoxFit.fill,
+                                            image: NetworkImage(
+                                                "http://expectojr.com/mygardener/images/${data[index]['jobimage']}.jpg"
+                                            )))),
                                 Expanded(
                                   child: Container(
                                     child: Column(
@@ -272,7 +272,7 @@ class _TabScreen3State extends State<TabScreen3> {
 
       setState(() {
         _currentAddress =
-            "${place.name},${place.locality}, ${place.postalCode}, ${place.country}";
+        "${place.name},${place.locality}, ${place.postalCode}, ${place.country}";
         init(); //load data from database into list array 'data'
       });
     } catch (e) {
@@ -284,7 +284,7 @@ class _TabScreen3State extends State<TabScreen3> {
     String urlLoadJobs = "http://expectojr.com/mygardener/php/load_accepted_jobs.php";
     ProgressDialog pr = new ProgressDialog(context,
         type: ProgressDialogType.Normal, isDismissible: false);
-    pr.style(message: "Loading All Accepted Gardener");
+    pr.style(message: "Loading All Accepted Jobs");
     pr.show();
     http.post(urlLoadJobs, body: {
       "email": widget.user.email ?? "notavail",
@@ -307,7 +307,7 @@ class _TabScreen3State extends State<TabScreen3> {
 
   Future init() async {
     if (widget.user.email=="user@noregister"){
-      Toast.show("Please register to view accepted Jobs", context,
+      Toast.show("Please register to view more features", context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
       return;
     }else{
@@ -321,5 +321,5 @@ class _TabScreen3State extends State<TabScreen3> {
     return null;
   }
 
-  
+
 }
